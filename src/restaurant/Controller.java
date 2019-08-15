@@ -3,6 +3,7 @@ package restaurant;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -12,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import restaurant.model.Product;
@@ -45,7 +47,7 @@ public class Controller {
 
     @FXML
     void initialize() {
-        Main.products.add(new Product(new Image(Main.class.getResourceAsStream("randomPizza.png")), "LOL", "LEL", 25));
+        Main.products.add(new Product(new Image(Main.class.getResourceAsStream("randomPizza.png")), "Какая-то рандомная пицца", "Я ебу из чего она состоит?", 2500));
         ObservableList<Product> products = FXCollections.observableList(Main.products);
         System.out.println(Main.products);
         productsList.setItems(products);
@@ -73,9 +75,10 @@ public class Controller {
     }
 
     static class Cell extends ListCell<Product>{
-        HBox hbox = new HBox();
+        VBox vbox = new VBox();
         Label name = new Label();
         Label descr = new Label();
+        Label price = new Label();
         Pane pane = new Pane();
         ImageView img = new ImageView();
 
@@ -83,8 +86,8 @@ public class Controller {
             super();
             img.setFitHeight(200);
             img.setFitWidth(200);
-            hbox.getChildren().addAll(img, name, descr);
-            hbox.setHgrow(pane, Priority.ALWAYS);
+            vbox.getChildren().addAll(img, name, descr, price);
+            vbox.setAlignment(Pos.CENTER);
         }
 
         @Override
@@ -93,8 +96,9 @@ public class Controller {
             if(product != null && !b){
                 name.setText(product.getName());
                 descr.setText(product.getDescription());
+                price.setText(Integer.toString(product.getPrice()));
                 img.setImage(product.getProductImage());
-                setGraphic(hbox);
+                setGraphic(vbox);
             }
         }
     }
