@@ -5,15 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:controller="restaurant.Controller" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.Controller">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f85656" height="90.0" layoutY="96.0" stroke="TRANSPARENT" strokeType="INSIDE" width="800.0" />
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#f85656" height="90.0" layoutY="96.0" stroke="TRANSPARENT" strokeType="INSIDE" width="800.0" />
       <Button fx:id="pizzaButton" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Пицца" />
       <Button fx:id="burgerButton" layoutX="130.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Бургеры" />
       <Button fx:id="sauceButton" layoutX="520.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Соусы" />
       <Button fx:id="drinkButton" layoutX="260.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Напитки" />
       <Button fx:id="snackButton" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Снеки" />
       <Button fx:id="paymentButton" layoutX="650.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Оплата" />
-      <ListView layoutY="186.0" prefHeight="315.0" prefWidth="800.0" />
+      <ListView fx:id="productsList" layoutY="186.0" prefHeight="314.0" prefWidth="800.0" />
    </children>
 </AnchorPane>

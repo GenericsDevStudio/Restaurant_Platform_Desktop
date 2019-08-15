@@ -11,7 +11,7 @@ import java.util.LinkedList;
 
 public class Main extends Application {
 
-    public static LinkedList<Product> userCart;
+   static LinkedList<Product> products = new LinkedList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -19,6 +19,8 @@ public class Main extends Application {
         primaryStage.setTitle("Restaurant_Desktop");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
+
+
     }
 
 
