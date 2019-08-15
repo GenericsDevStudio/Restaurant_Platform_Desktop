@@ -3,6 +3,8 @@ package restaurant;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -43,6 +45,7 @@ public class Controller {
         tilePane.setStyle("-fx-background-color: white ;");
         tilePane.setVgap(30);
         tilePane.setHgap(30);
+        tilePane.setMaxWidth(Region.USE_PREF_SIZE);
         for(Product temp : Main.products.get(0)){
             addTileNode(temp);
         }
@@ -72,17 +75,22 @@ public class Controller {
         ImageView current = new ImageView(product.getProductImage());
         current.setFitWidth(150);
         current.setFitHeight(150);
-        Label name = new Label(product.getName() + "\n" + product.getDescription() + "\n" + product.getPrice(), current);
-        name.setContentDisplay(ContentDisplay.TOP);
-        name.setOnMouseClicked(e -> {
-            if (selectedLabel != name) {
+        Label main = new Label(product.getName() + "\n" + product.getDescription() + "\n" + product.getPrice(), current);
+        main.setContentDisplay(ContentDisplay.TOP);
+        main.setOnMouseClicked(e -> {
+            if (selectedLabel != main) {
                 clearSelection();
-                selectLabel(name);
+                selectLabel(main);
             } else {
-                clearSelection();
+                if(e.getButton().equals(MouseButton.PRIMARY)){
+                    if(e.getClickCount() == 2){
+                        tilePane.getChildren().remove(main);
+                        clearSelection();
+                    }
+                }
             }
         });
-        tilePane.getChildren().add(name);
+        tilePane.getChildren().add(main);
     }
 
     private void selectLabel(Label label) {

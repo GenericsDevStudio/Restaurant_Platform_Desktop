@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import restaurant.model.Product;
 
@@ -36,10 +35,10 @@ public class Main extends Application {
         products.add(new LinkedList<Product>());
         products.add(new LinkedList<Product>());
 
-        products.get(0).add(new Product(new Image(Main.class.getResourceAsStream("randomPizza.png")), "Какая-то рандомная пицца", "Я ебу из чего она состоит?", 2500));
-        products.get(0).add(new Product(new Image(Main.class.getResourceAsStream("randomPizza.png")), "Какая-то рандомная пицца", "Я ебу из чего она состоит?", 2500));
-        products.get(0).add(new Product(new Image(Main.class.getResourceAsStream("randomPizza.png")), "Какая-то рандомная пицца", "Я ебу из чего она состоит?", 2500));
-        products.get(0).add(new Product(new Image(Main.class.getResourceAsStream("randomPizza.png")), "Какая-то рандомная пицца", "Я ебу из чего она состоит?", 2500));
-        products.get(0).add(new Product(new Image(Main.class.getResourceAsStream("randomPizza.png")), "Какая-то рандомная пицца", "Я ебу из чего она состоит?", 2500));
+        products.get(0).add(Product.DEFAULT_PIZZA);
+        products.get(0).add(Product.DEFAULT_PIZZA);
+        products.get(0).add(Product.PIZZA_WITH_SHIT);
+        products.get(0).add(Product.DEFAULT_PIZZA);
+        products.get(0).add(Product.DEFAULT_PIZZA);
     }
 }
