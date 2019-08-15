@@ -1,0 +1,1 @@
+java --module-path "%JAVAFX_HOME%"\lib --add-modules javafx.base,javafx.graphics,javafx.controls,javafx.fxml -Dfile.encoding=UTF-8 -cp "%cd%"\out\production\Restaurant_Platform_Desktop restaurant.Main
