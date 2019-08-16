@@ -30,15 +30,14 @@ public class Main extends Application {
     }
 
     public static void addProducts(){
-        products.add(new LinkedList<Product>());
-        products.add(new LinkedList<Product>());
-        products.add(new LinkedList<Product>());
-        products.add(new LinkedList<Product>());
+        products.add(new LinkedList<>());
+        products.add(new LinkedList<>());
+        products.add(new LinkedList<>());
+        products.add(new LinkedList<>());
+        products.add(new LinkedList<>());
 
         products.get(0).add(Product.DEFAULT_PIZZA);
-        products.get(0).add(Product.DEFAULT_PIZZA);
         products.get(0).add(Product.PIZZA_WITH_SHIT);
-        products.get(0).add(Product.DEFAULT_PIZZA);
-        products.get(0).add(Product.DEFAULT_PIZZA);
+        products.get(1).add(Product.SUSPICIOUS_BURGER);
     }
 }
