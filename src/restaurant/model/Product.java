@@ -21,7 +21,7 @@ public class Product {
 
     // CONSTRUCTOR
 
-    Product(Image productImage, String name, String description, int price, String type){
+    private Product(Image productImage, String name, String description, int price, String type){
         this.productImage = productImage;
         this.name = name;
         this.description = description;

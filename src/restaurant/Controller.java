@@ -33,6 +33,9 @@ public class Controller {
     private Button paymentButton;
 
     @FXML
+    private Button buyButton;
+
+    @FXML
     private Rectangle rectangle;
 
     @FXML
@@ -59,31 +62,48 @@ public class Controller {
 
         pizzaButton.setOnAction(event -> {
             rectangle.setFill(Color.web("#f85656"));
+            buyButton.setDisable(true);
+            buyButton.setVisible(false);
             tilePane.getChildren().clear();
             showPizzas();
         });
         burgerButton.setOnAction(event -> {
             rectangle.setFill(Color.web("555AF0"));
+            buyButton.setDisable(true);
+            buyButton.setVisible(false);
             tilePane.getChildren().clear();
             showBurgers();
         });
         drinkButton.setOnAction(event -> {
             rectangle.setFill(Color.web("6187EF"));
+            buyButton.setDisable(true);
+            buyButton.setVisible(false);
             tilePane.getChildren().clear();
             showDrinks();
         });
         snackButton.setOnAction(event -> {
             rectangle.setFill(Color.web("EFC746"));
+            buyButton.setDisable(true);
+            buyButton.setVisible(false);
             tilePane.getChildren().clear();
             showSnacks();
         });
         sauceButton.setOnAction(event -> {
             rectangle.setFill(Color.web("86EC53"));
+            buyButton.setDisable(true);
+            buyButton.setVisible(false);
             tilePane.getChildren().clear();
             showSauces();
         });
         paymentButton.setOnAction(event -> {
             rectangle.setFill(Color.web("9053EC"));
+            buyButton.setDisable(false);
+            buyButton.setVisible(true);
+            tilePane.getChildren().clear();
+            showCart();
+        });
+        buyButton.setOnAction(event -> {
+            Main.buySelectedProducts();
             tilePane.getChildren().clear();
             showCart();
         });
@@ -208,8 +228,12 @@ public class Controller {
     }
 
     private void showCart(){
-        for(Product temp : Main.cart){
-            addTileNodesForCart(temp);
+        if(Main.cart.size() > 0){
+            for(Product temp : Main.cart){
+                addTileNodesForCart(temp);
+            }
+        }else{
+
         }
     }
 }
