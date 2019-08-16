@@ -16,7 +16,7 @@
       <Button fx:id="drinkButton" layoutX="260.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Напитки" />
       <Button fx:id="snackButton" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Снеки" />
       <Button fx:id="paymentButton" layoutX="650.0" layoutY="2.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="130.0" text="Оплата" />
-      <Label fx:id="emptyCartLabel" layoutX="300.0" layoutY="300.0" opacity="0.59" text="Your cart is empty" visible="false">
+      <Label fx:id="emptyCartLabel" alignment="CENTER" layoutX="260.0" layoutY="300.0" opacity="0.59" prefHeight="30.0" prefWidth="260.0" text="Вы ещё ничего не выбрали" visible="false">
          <font>
             <Font size="20.0" />
          </font>
