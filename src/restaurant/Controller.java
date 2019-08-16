@@ -106,15 +106,15 @@ public class Controller {
                     if(e.getClickCount() >= 2){
                         switch (product.getType()){
                             case "PIZZA" :  Main.products.get(0).remove(tilePane.getChildrenUnmodifiable().indexOf(main));
-                            break;
+                                break;
                             case "BURGER" : Main.products.get(1).remove(tilePane.getChildrenUnmodifiable().indexOf(main));
-                            break;
+                                break;
                             case "DRINK" : Main.products.get(2).remove(tilePane.getChildrenUnmodifiable().indexOf(main));
-                            break;
+                                break;
                             case "SNACK" : Main.products.get(3).remove(tilePane.getChildrenUnmodifiable().indexOf(main));
-                            break;
+                                break;
                             case "SAUCE" : Main.products.get(4).remove(tilePane.getChildrenUnmodifiable().indexOf(main));
-                            break;
+                                break;
                         }
                         tilePane.getChildren().remove(main);
                         Main.cart.add(product);
@@ -141,9 +141,20 @@ public class Controller {
             }else{
                 if(e.getButton().equals(MouseButton.PRIMARY)){
                     if(e.getClickCount() >= 2){
+                        switch (product.getType()){
+                            case "PIZZA" : Main.products.get(0).add(product);
+                                break;
+                            case "BURGER" : Main.products.get(1).add(product);
+                                break;
+                            case "DRINK" : Main.products.get(2).add(product);
+                                break;
+                            case "SNACK" : Main.products.get(3).add(product);
+                                break;
+                            case "SAUCE" : Main.products.get(4).add(product);
+                                break;
+                        }
                         Main.cart.remove(tilePane.getChildrenUnmodifiable().indexOf(main));
                         tilePane.getChildren().remove(main);
-
                         clearSelection();
                     }
                 }
